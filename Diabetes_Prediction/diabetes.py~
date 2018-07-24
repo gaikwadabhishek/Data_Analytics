@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 headers=['Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age, Outcome']
-df=pd.read_csv("diabetes.csv")
+df=pd.read_csv("/home/administrator/Downloads/diabetes.csv")
 
 #Replacing missing values by Mean
 
