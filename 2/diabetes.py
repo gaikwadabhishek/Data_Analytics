@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 headers=['Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age, Outcome']
-df=pd.read_csv("/home/administrator/Downloads/diabetes.csv")
+df=pd.read_csv("diabetes.csv")
 
 #Replacing missing values by Mean
 
@@ -54,7 +54,7 @@ X = np.array(df.drop(['Outcome','Pregnancies','Glucose','BloodPressure','SkinThi
 y = np.array(df['Outcome'])
 
 '''
-print(X)
+#print(X)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.05, random_state=56)
 
 from sklearn.preprocessing import StandardScaler
@@ -69,6 +69,7 @@ y_predict = clf.predict(X_test)
 
 from sklearn.metrics import confusion_matrix
 c=confusion_matrix(y_test,y_predict)
+print("Confusion Matrix:")
 print(c)
 '''
 from sklearn.metrics import precision_recall_fscore_support
@@ -76,5 +77,6 @@ prfs=precision_recall_fscore_support(y_test,y_predict)
 print("prediction",prfs[0])
 '''
 from sklearn.metrics import accuracy_score
+print("Accuracy using Naive Bayes is:");
 print(accuracy_score(y_test, y_predict))
 
